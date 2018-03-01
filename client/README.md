@@ -1,10 +1,25 @@
-# AngularSeed
+# Mateular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
+Angular frontend for [Matomat](https://github.com/OhmNoobs/Matomat), generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.4.
+
+## Prerequisites
+
+- Make sure you have installed [node.js](https://nodejs.org/en/)
+- Set up Matomat
+- Launch Matomat development server on `http://localhost:5000/`
+
+## Getting started
+
+- Clone this repository ```git clone https://github.com/OhmNoobs/Mateular.git```
+- Change to project directory
+- Run ```npm install```
+- Run ```npm start```
+- Navigate to `http://localhost:4200/`
+- Be happy 😊
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. This ensures that the proxy configuration is used. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -21,7 +36,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
 
 ## Further help
 

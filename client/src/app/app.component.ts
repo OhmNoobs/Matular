@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
+import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'app';
+export class AppComponent implements OnInit {
+
+  title = 'Mateular';
+
+  constructor() {
+  }
+
+  ngOnInit(): void {
+  }
 }

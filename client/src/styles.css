@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #dbdbdb;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.album {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.card {
+  float: left;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+  height: 20rem;
+  cursor: pointer;
+}
+
+.card > img {
+  margin-bottom: .75rem;
+  height: 80%
+}
+
+.card-text {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.img-preview {
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+  height: 15rem;
+  float: left;
+}
+
+.img-preview > img {
+  height: 100%;
+}
