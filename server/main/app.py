@@ -66,7 +66,12 @@ def init_db():
     db.commit()
 
 
-@app.route('/add/item', methods=['POST'])
+@app.route('/')
+def hello_humans():
+    return "This is an API, not for HOOOOMANS!"
+
+
+@app.route('/api/add/item', methods=['POST'])
 def add_item():
     item_info = request.get_json(force=True)  # type: dict
     if not session.get('logged_in'):
@@ -90,7 +95,7 @@ def evaluate_price(price: str):
     return float(price)
 
 
-@app.route('/get/items')
+@app.route('/api/get/items')
 def get_items():
     db = get_db()
     cur = db.execute('SELECT id, name, price, image, color FROM Products ORDER BY id DESC')
@@ -110,7 +115,7 @@ def build_item(row):
     return item
 
 
-@app.route('/get/item/<identifier>')
+@app.route('/api/get/item/<identifier>')
 def get_item(identifier):
     try:
         int(identifier)
@@ -129,7 +134,7 @@ def get_item(identifier):
     return json.dumps(item_for_json)
 
 
-@app.route('/delete/item/<identifier>/', methods=['DELETE'])
+@app.route('/api/delete/item/<identifier>/', methods=['DELETE'])
 def delete_item(identifier):
     if not session.get('logged_in'):
         abort(401)
@@ -139,7 +144,7 @@ def delete_item(identifier):
     return json.dumps('success')
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/api/login', methods=['GET', 'POST'])
 def login():
     error = None
     if request.method == 'POST':
@@ -158,7 +163,7 @@ def login():
     return json.dumps({'result': error})
 
 
-@app.route('/logout')
+@app.route('/api/logout')
 def logout():
     session.pop('logged_in', None)
     return json.dumps('ok')
@@ -175,7 +180,7 @@ def malformed_receipt(receipt):
     return True
 
 
-@app.route('/add/transaction', methods=['POST'])
+@app.route('/api/add/transaction', methods=['POST'])
 def add_transaction():
     receipt = request.get_json(force=True)  # type: dict
 
@@ -198,11 +203,11 @@ def add_transaction():
     return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
 
 
-@app.route('/add/credit', methods=['POST'])
+@app.route('/api/add/credit', methods=['POST'])
 def add_credit():
     pass
 
 
-@app.route('/get/balance/<user_id>', methods=['POST'])
+@app.route('/api/get/balance/<user_id>', methods=['POST'])
 def get_balance(user_id):
     pass
