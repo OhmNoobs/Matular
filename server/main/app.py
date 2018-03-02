@@ -66,7 +66,7 @@ def init_db():
     db.commit()
 
 
-@app.route('/')
+@app.route('/api')
 def hello_humans():
     return "This is an API, not for HOOOOMANS!"
 
